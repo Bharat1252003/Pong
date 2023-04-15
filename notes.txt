@@ -1,0 +1,50 @@
+turtle module
+
+built in, simpler than pygame, basic graphics
+window
+	wn = turtle.Screen() - setting up a window
+	wn.title("Pong")
+	wn.bgcolor("black")
+	wn.setup(width = 800, height = 600) - 0,0 is the centre and starting point
+
+	wn.listen() - listen for keyboard inputs
+	wn.onkeypress(func,"keyboard_input") - "w" - letter w, "Up" - up arrow
+	
+	wn.tracer(0) - stops window from updating
+		allows for us to manually update the window - speeding up games
+	wn.update() - updates the window
+
+object
+	paddle_a = turtle.Turtle() - creating objects
+	paddle_a.speed(0) - speed of animation; 0 - max speed
+	paddle_a.shape("square") - default 20x20 pixels
+	paddle_a.shapesize(stretch_wid=5, stretch_len=1) - changing shape of object by some factor
+	paddle_a.color("white")
+	paddle_a.penup() - pen up, default is pen down and any movement draws a line in the window with pen down
+		pen settings can be changed
+	paddle_a.goto(0,10) - movement
+	paddle_a.ycor() - y coordinate
+	paddle_a.sety(y) - setting the y coordinate
+	pen.hideturtle() - hides the object
+	pen.write("Text to be written", font=("Courier", 24, "normal"))
+	pen.clear() - clears the window
+	
+for sounds in windows
+import winsound
+winsound.PlaySound("sound.wav", winsound.SND_ASYNC) - plays sound without stopping everything
+
+for sounds in linux
+import os
+os.system("aplay sound.wav&") - & for asynchronous playing of sound - without stopping everything else
+
+	
+creating multiple variables
+	for number in range(1,n):
+   		dictionary["paddle_%s" %number] = 0
+
+	dictionary.keys() - different variables
+		can have attributes and can be made into separate objects
+		for i in dictionary.keys():
+			i = turtle.Turtle()
+			i.speed(0)
+			
